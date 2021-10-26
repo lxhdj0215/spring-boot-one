@@ -5,6 +5,7 @@ import com.lxhdj.DemoApplication;
 import com.lxhdj.dao.mapper.MissionMapper;
 import com.lxhdj.dao.model.Mission;
 import com.lxhdj.service.MissionService;
+import com.lxhdj.service.TestService;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -24,6 +25,9 @@ public class MissionServiceTest {
     @Autowired
     private MissionMapper missionMapper;
 
+    @Autowired
+    private TestService testService;
+
     @Test
     public void selectAllTest() {
         List<Mission> missions = missionMapper.selectAll();
@@ -32,6 +36,19 @@ public class MissionServiceTest {
 
     @Test
     public void m1Test() {
-        missionService.trx();
+        testService.trxTest();
+        //        missionService.trx();
+        //        missionService.trx_1();
     }
+
+    @Test
+    public void trx_2Test() {
+        missionService.trx_2();
+    }
+
+    @Test
+    public void trx_1Test() {
+        missionService.trx_1();
+    }
+
 }

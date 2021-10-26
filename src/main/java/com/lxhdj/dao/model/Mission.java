@@ -2,15 +2,14 @@ package com.lxhdj.dao.model;
 
 import java.util.Date;
 import javax.persistence.*;
-import lombok.ToString;
 
 @Table(name = "mission")
-@ToString
 public class Mission {
     /**
      * 主键
      */
     @Id
+    @GeneratedValue(generator = "JDBC")
     private Long id;
 
     /**

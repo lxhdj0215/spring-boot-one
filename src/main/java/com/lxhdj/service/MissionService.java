@@ -3,12 +3,11 @@ package com.lxhdj.service;
 import com.alibaba.fastjson.JSON;
 import com.lxhdj.dao.mapper.MissionMapper;
 import com.lxhdj.dao.model.Mission;
-import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.CollectionUtils;
 
 @Service
 @Slf4j
@@ -23,7 +22,7 @@ public class MissionService {
         trx_1();
     }
 
-//    @Transactional
+    @Transactional(propagation= Propagation.NOT_SUPPORTED)
     public void trx_1() {
         String str = "{\"bdTransfer\":1,\"businessType\":1000,\"collectionType\":1,\"createMisCode\":\"zhangjiashan\",\"createMisName\":\"张佳杉\","
                 + "\"ctime\":1630471703000,\"endTime\":1633017599000,\"finishTime\":1630471740000,\"id\":14742,\"missionMonitorType\":0,"
@@ -33,12 +32,12 @@ public class MissionService {
 
         Mission mission = JSON.parseObject(str, Mission.class);
         mission.setId(null);
-        mission.setName("wgj-4");
+        mission.setName("wgj-12");
         missionMapper.insert(mission);
         int i = 1 / 0;
     }
 
-//    @Transactional
+    @Transactional(propagation= Propagation.SUPPORTS)
     public void trx_2() {
         String str = "{\"bdTransfer\":1,\"businessType\":1000,\"collectionType\":1,\"createMisCode\":\"zhangjiashan\",\"createMisName\":\"张佳杉\","
                 + "\"ctime\":1630471703000,\"endTime\":1633017599000,\"finishTime\":1630471740000,\"id\":14742,\"missionMonitorType\":0,"
@@ -48,7 +47,7 @@ public class MissionService {
 
         Mission mission = JSON.parseObject(str, Mission.class);
         mission.setId(null);
-        mission.setName("wgj-5");
+        mission.setName("wgj-13");
         missionMapper.insert(mission);
     }
 
