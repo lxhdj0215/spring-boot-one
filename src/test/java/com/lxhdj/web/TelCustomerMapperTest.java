@@ -1,9 +1,6 @@
 package com.lxhdj.web;
 
 import com.lxhdj.DemoApplication;
-import com.lxhdj.dao.mapper.TelCustomerMapper;
-import com.lxhdj.dao.model.TelCustomer;
-import com.lxhdj.dao.model.TelCustomerExample;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
