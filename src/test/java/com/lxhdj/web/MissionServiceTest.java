@@ -30,8 +30,8 @@ public class MissionServiceTest {
 
     @Test
     public void selectAllTest() {
-        List<Mission> missions = missionMapper.selectAll();
-        log.info(JSON.toJSONString(missions));
+//        List<Mission> missions = missionMapper.selectAll();
+//        log.info(JSON.toJSONString(missions));
     }
 
     @Test

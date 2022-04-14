@@ -25,7 +25,7 @@
         <!-- 接口类 -->
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.lxhdj.dao.mapper" targetProject="src/main/java"/>
 
-        <table tableName="tel_customer"
+        <table tableName="mission"
                enableCountByExample="true"
                enableUpdateByExample="true"
                enableSelectByExample="true"

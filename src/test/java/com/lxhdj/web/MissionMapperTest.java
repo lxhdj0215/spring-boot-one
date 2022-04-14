@@ -38,7 +38,7 @@ public class MissionMapperTest {
         Mission mission = JSON.parseObject(str, Mission.class);
         mission.setId(null);
         mission.setName("wgj-121");
-        missionMapper.addOne(mission);
+        missionMapper.insert(mission);
         log.info("id = {}", mission.getId());
     }
 
@@ -53,7 +53,7 @@ public class MissionMapperTest {
         Mission mission = JSON.parseObject(str, Mission.class);
         mission.setId(null);
         mission.setName("wgj-121");
-        missionMapper.addTwo(mission);
+        missionMapper.insert(mission);
         log.info("id = {}", mission.getId());
     }
 
@@ -68,25 +68,25 @@ public class MissionMapperTest {
         Mission mission = JSON.parseObject(str, Mission.class);
         mission.setId(null);
         mission.setName("wgj-121");
-        missionMapper.addThree(mission);
+        missionMapper.insert(mission);
         log.info("id = {}", mission.getId());
     }
 
-    @Test
-    public void selectFirstTest() {
-        Mission mission = new Mission();
-        mission.setId(14867L);
-        List<Mission> missions = missionMapper.selectFirst(mission);
-        log.info(JSON.toJSONString(missions));
-    }
+//    @Test
+//    public void selectFirstTest() {
+//        Mission mission = new Mission();
+//        mission.setId(14867L);
+//        List<Mission> missions = missionMapper.se(mission);
+//        log.info(JSON.toJSONString(missions));
+//    }
 
-    @Test
-    public void selectSecondTest() {
-        Mission mission = new Mission();
-        mission.setId(14867L);
-        List<Mission> missions = missionMapper.selectSecond(mission);
-        log.info(JSON.toJSONString(missions));
-    }
+//    @Test
+//    public void selectSecondTest() {
+//        Mission mission = new Mission();
+//        mission.setId(14867L);
+//        List<Mission> missions = missionMapper.selectSecond(mission);
+//        log.info(JSON.toJSONString(missions));
+//    }
 
 
 }

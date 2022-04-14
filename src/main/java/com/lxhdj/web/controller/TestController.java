@@ -1,6 +1,7 @@
 package com.lxhdj.web.controller;
 
 import com.lxhdj.dao.mapper.MissionMapper;
+import com.lxhdj.dao.model.Mission;
 import com.lxhdj.service.MissionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,12 @@ public class TestController {
         log.info("name = {}", name);
         missionService.trx();
         return name;
+    }
+
+    @RequestMapping("/all")
+    public Mission all(Long id) {
+        Mission mission = missionMapper.selectByPrimaryKey(id);
+        return mission;
     }
 
 
