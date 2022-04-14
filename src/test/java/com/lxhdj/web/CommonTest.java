@@ -20,6 +20,7 @@ public class CommonTest {
 
     @Test
     public void m6() {
+
         Random random = new Random();
         int count = 0;
         int a = 0;
