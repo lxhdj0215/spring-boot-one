@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.lxhdj.DemoApplication;
 import com.lxhdj.dao.mapper.MissionMapper;
 import com.lxhdj.dao.model.Mission;
-import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,10 +19,17 @@ public class MissionMapperTest {
     @Autowired
     private MissionMapper missionMapper;
 
+
     @Test
     public void selectAll_Test() {
 //        List<Mission> missions = missionMapper.selectAllTest();
 //        log.info(JSON.toJSONString(missions));
+    }
+
+    @Test
+    public void selectByPrimaryKeyTest() {
+        Mission mission = missionMapper.selectByPrimaryKey(14754L);
+        System.out.println(JSON.toJSONString(mission));
     }
 
 

@@ -22,6 +22,10 @@ public class MissionService {
         trx_1();
     }
 
+    public MissionService() {
+//        System.out.println("MissionService instance");
+    }
+
     @Transactional(propagation= Propagation.NOT_SUPPORTED)
     public void trx_1() {
         String str = "{\"bdTransfer\":1,\"businessType\":1000,\"collectionType\":1,\"createMisCode\":\"zhangjiashan\",\"createMisName\":\"张佳杉\","
