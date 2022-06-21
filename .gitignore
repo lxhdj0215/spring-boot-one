@@ -12,3 +12,4 @@ node_modules
 *.log
 mvn.txt
 .mvn/*
+logs/*

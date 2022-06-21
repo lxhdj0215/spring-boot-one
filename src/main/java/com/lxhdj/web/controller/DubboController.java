@@ -4,9 +4,8 @@
 //import lombok.extern.slf4j.Slf4j;
 //import org.apache.dubbo.config.annotation.DubboReference;
 //import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RestController;
 //
-//@RestController
+////@RestController
 //@RequestMapping("/dubbo")
 //@Slf4j
 //public class DubboController {

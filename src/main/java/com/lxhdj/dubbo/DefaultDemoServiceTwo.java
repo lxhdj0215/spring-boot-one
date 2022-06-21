@@ -1,9 +1,8 @@
 //package com.lxhdj.dubbo;
 //
-//import org.apache.dubbo.config.annotation.DubboService;
 //import org.springframework.beans.factory.annotation.Value;
 //
-//@DubboService
+////@DubboService
 //public class DefaultDemoServiceTwo implements DemoServiceTwo {
 //
 //

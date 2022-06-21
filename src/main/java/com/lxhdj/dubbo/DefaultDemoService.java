@@ -1,10 +1,9 @@
 //package com.lxhdj.dubbo;
 //
 //import lombok.extern.slf4j.Slf4j;
-//import org.apache.dubbo.config.annotation.DubboService;
 //import org.springframework.beans.factory.annotation.Value;
 //
-//@DubboService
+////@DubboService
 //@Slf4j
 //public class DefaultDemoService implements DemoService {
 //
