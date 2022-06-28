@@ -1,4 +1,4 @@
-package com.lxhdj.web;
+package com.lxhdj.algorithm;
 
 /**
  * @Author: wangguijun@meituan.com

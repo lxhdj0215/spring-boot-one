@@ -1,4 +1,4 @@
-package com.lxhdj.web;
+package com.lxhdj.dao;
 
 import com.alibaba.fastjson.JSON;
 import com.lxhdj.DemoApplication;

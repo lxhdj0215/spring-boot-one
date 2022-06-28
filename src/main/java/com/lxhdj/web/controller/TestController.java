@@ -35,7 +35,7 @@ public class TestController {
     @RequestMapping("/one")
     public String one(String name) {
         log.info("name = {}", name);
-        missionService.trx();
+//        missionService.trx();
         return name;
     }
 

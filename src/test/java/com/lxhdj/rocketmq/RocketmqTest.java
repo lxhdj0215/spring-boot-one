@@ -28,7 +28,7 @@ public class RocketmqTest {
     @Test
     public void sendTest() {
         for (int i = 0; i < 100; i++) {
-            springBootProducer.sendMessage("TestTopic", i + "" + "-msg-" + System.currentTimeMillis());
+            springBootProducer.sendMessage("example", i + "" + "-msg-" + System.currentTimeMillis());
 //            try {
 //                Thread.sleep(1000);
 //            } catch (InterruptedException e) {

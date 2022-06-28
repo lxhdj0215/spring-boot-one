@@ -30,6 +30,8 @@ public class ThreadPoolProblem {
 
     public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(2);
+        Executors.newSingleThreadExecutor();
+        Executors.newCachedThreadPool();
         executor.execute(new Task());
         executor.execute(new Task());
         executor.execute(new Task());

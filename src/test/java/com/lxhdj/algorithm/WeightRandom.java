@@ -1,4 +1,4 @@
-package com.lxhdj.web;
+package com.lxhdj.algorithm;
 
 import java.util.Arrays;
 import java.util.Random;

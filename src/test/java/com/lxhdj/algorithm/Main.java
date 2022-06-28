@@ -1,4 +1,4 @@
-package com.lxhdj;
+package com.lxhdj.algorithm;
 
 import java.util.Arrays;
 import java.util.HashMap;

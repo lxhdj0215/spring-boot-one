@@ -1,4 +1,4 @@
-package com.lxhdj.web;
+package com.lxhdj.algorithm;
 
 public class ListNode {
     int val;

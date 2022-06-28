@@ -6,15 +6,15 @@ package com.lxhdj.thread;
  */
 public class JoinTest {
     public static void main(String[] args) throws InterruptedException {
-        Thread thread = new Thread(() -> {
-            for (int i = 0; i < 100; i++) {
-                System.out.println("thread" + i);
-            }
-        });
-        thread.start();
-        for (int i = 0; i < 100; i++) {
-            thread.join();
-            System.out.println("main" + i);
-        }
+        Thread threadA = new Thread(() -> System.out.println("A"));
+        Thread threadB = new Thread(() -> System.out.println("B"));
+        Thread threadC = new Thread(() -> System.out.println("C"));
+        threadA.start();
+        threadA.join();
+        threadB.start();
+        threadB.join();
+        threadC.start();
+        threadC.join();
+        System.out.println("main");
     }
 }
