@@ -1,15 +1,19 @@
 package com.lxhdj.dao;
 
 import com.alibaba.fastjson.JSON;
+import com.github.pagehelper.PageHelper;
 import com.lxhdj.DemoApplication;
 import com.lxhdj.dao.mapper.MissionMapper;
 import com.lxhdj.dao.model.Mission;
+import com.lxhdj.dao.model.MissionExample;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {DemoApplication.class})
@@ -30,6 +34,15 @@ public class MissionMapperTest {
     public void selectByPrimaryKeyTest() {
         Mission mission = missionMapper.selectByPrimaryKey(14754L);
         System.out.println(JSON.toJSONString(mission));
+    }
+
+    @Test
+    public void selectByExampleTest() {
+        PageHelper.startPage(2, 10);
+        MissionExample example = new MissionExample();
+        List<Mission> missions = missionMapper.selectByExample(example);
+        System.out.println(missions.size());
+        System.out.println(JSON.toJSONString(missions));
     }
 
 

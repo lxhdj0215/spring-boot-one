@@ -5,8 +5,7 @@ import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;
 
 //@Component
-//@RocketMQMessageListener(consumerGroup = "springBootGroup", topic = "TestTopic")
-@RocketMQMessageListener(consumerGroup = "test", topic = "example")
+@RocketMQMessageListener(consumerGroup = "springBootGroup", topic = "TestTopic")
 @Slf4j
 public class SpringBootConsumer implements RocketMQListener {
 

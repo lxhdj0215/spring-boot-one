@@ -4,7 +4,6 @@ package com.lxhdj.rocketmq;
 import com.lxhdj.DemoApplication;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.SendResult;
-import org.apache.rocketmq.client.producer.TransactionListener;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,8 @@ public class RocketmqTest {
     @Autowired
     private SpringBootProducer springBootProducer;
 
-    @Autowired
-    private TransactionListener transactionListener;
+//    @Autowired
+//    private TransactionListener transactionListener;
 
     @Test
     public void sendTest() {
@@ -58,9 +57,9 @@ public class RocketmqTest {
 
     @Test
     public void sendTest01() {
-        String topic = "topic2";
+        String topic = "TestTopic";
         String tags = "TagsWgj";
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 100; i++) {
             String msg = i + "-wgj";
             SendResult sendResult = springBootProducer.sendMsg(topic, tags, msg);
         }

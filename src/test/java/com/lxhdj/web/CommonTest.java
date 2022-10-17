@@ -6,15 +6,42 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.*;
 
 public class CommonTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread2;
+        Thread thread1;
+        thread1= new Thread(() -> {
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("1");
+        });
+        thread2= new Thread(() -> {
+            System.out.println("2");
+        });
+//        thread2.join();
+        thread2.start();
+        thread1.start();
+        thread1.interrupt();
+//        thread1.join();
+        System.out.println("3");
+    }
+
+    public void aaa() {
+        int a = 10;
+
         HashMap<Integer, String> map = new HashMap<>();
         map.put(1, "wgj");
-
 
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");
@@ -52,24 +79,34 @@ public class CommonTest {
 
     }
 
+    @Test
+    public void m1() {
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(null, "123");
+        map.put(null, "124");
+        System.out.println(map.get(null));
+    }
+
 
     @Test
-    public void one() {
-        byte[] bytes = new byte[3];
-        bytes[0] = -1;
-        bytes[1] = 127;
-        bytes[2] = 127;
-        for (byte b : bytes) {
-            System.out.println(Integer.toBinaryString(b));
-        }
-        byte[] b1 = new byte[4];
-        System.out.println(((bytes[0] & 11111100)));
-        System.out.println("===" + ((bytes[0] & 11111100) >> 2));
-        b1[0] = (byte) ((bytes[0] | 11111100) >> 2);
-        for (byte b : b1) {
-            System.out.println(b);
-            System.out.println(Integer.toBinaryString(b));
-        }
+    public void one() throws ParseException {
+
+        // 日期格式化
+        DateFormat simpleFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date startDate = simpleFormat.parse("2019-12-25");
+        Date endDate = new Date();
+        long startTime = startDate.getTime();
+        long endTime = endDate.getTime();
+        int days = (int) ((endTime - startTime) / (1000 * 60 * 60 * 24));
+        System.out.println("两个时间之间的天数间隔为：" + days);
+
+        LocalDate birthday = LocalDate.parse("2019-12-25");
+        LocalDate now = LocalDate.now();
+
+        Period p = Period.between(birthday, now);
+        System.out.println(p.getYears());//获取相距年份
+        System.out.println(p.getMonths());//获取相距年份余下的月份
+        System.out.println(p.getDays());//获取相距月份余下的天数
     }
 
     public static String reverse(String str) {

@@ -6,6 +6,7 @@ import com.lxhdj.service.MissionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,6 +38,18 @@ public class TestController {
         log.info("name = {}", name);
 //        missionService.trx();
         return name;
+    }
+
+    @RequestMapping("/two/{name}")
+    public String two(@PathVariable("name") String name) {
+        log.info("name = {}", name);
+//        missionService.trx();
+        return name;
+    }
+
+    @RequestMapping("/two/wgj")
+    public void two_() {
+        log.info("================name = {}", "wgj");
     }
 
     @RequestMapping("/all")
